@@ -1,13 +1,9 @@
 
-const checkboxes = document.querySelectorAll('input');
+const elements = document.querySelectorAll('input');
 
-checkboxes.forEach((checkbox) => {
-	checkbox.addEventListener('change', () => {
-		checkboxes.forEach((other) => {
-			if (other !== checkbox) {
-				other.checked = false;
-			}
-		});
-	});
-});
+elements.forEach(v => v.addEventListener('change', (e) => {
+  elements.forEach((v) => {
+    e.target !== v ? v.checked = false : v.checked = true;
+  });
+}));
 
